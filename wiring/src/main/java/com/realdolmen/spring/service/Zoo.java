@@ -17,5 +17,7 @@ public interface Zoo {
 
     int countAnimals();
 
+    void feedAnimals();
+
     // TODO add method to feed animals
 }
