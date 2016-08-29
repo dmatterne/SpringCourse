@@ -19,4 +19,10 @@ public interface Zoo {
     int countAnimals();
 
     void feedAnimals();
+
+    double getAnimalPrice();
+
+    String getZooOwnerName();
+
+    int getMaxAnimalCount();
 }

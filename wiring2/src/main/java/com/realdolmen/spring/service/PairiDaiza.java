@@ -3,6 +3,8 @@ package com.realdolmen.spring.service;
 import com.realdolmen.spring.domain.Animal;
 import com.realdolmen.spring.domain.Visitor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,18 @@ public class PairiDaiza implements Zoo {
 
     // TODO Add maxAnimalCount, ownerName and ticketPrice, and load from properties
 
+
+    @Value("${zoo.name}")
     private String name;
+    @Value("${zoo.maxAnimalCount}")
+    private int maxAnimalCount;
+    @Value("${zoo.owner.name}")
+    private String ownerName;
+    @Value("${zoo.ticket.price}")
+    private double ticketPrice;
+
+    @Autowired
+    private Environment env;
 
 
     private List<Animal> animals = new ArrayList<>();
@@ -58,5 +71,37 @@ public class PairiDaiza implements Zoo {
     @Override
     public void feedAnimals() {
         foodDistributionService.feedAnimalsByType(animals);
+    }
+
+
+    @Override
+    public double getAnimalPrice() {
+        return this.ticketPrice;
+    }
+
+    @Override
+    public String getZooOwnerName() {
+        return this.ownerName;
+    }
+
+    @Override
+    public int getMaxAnimalCount() {
+        return this.maxAnimalCount;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMaxAnimalCount(int maxAnimalCount) {
+        this.maxAnimalCount = maxAnimalCount;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public void setTicketPrice(double ticketPrice) {
+        this.ticketPrice = ticketPrice;
     }
 }

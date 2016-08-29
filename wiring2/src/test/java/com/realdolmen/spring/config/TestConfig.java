@@ -12,19 +12,38 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  * Created by cda5732 on 14/04/2015.
  */
 @Configuration
+@Profile("test")
+@PropertySource("classpath:test.properties")
+@ComponentScan(basePackages = "com.realdolmen.spring")
 // TODO load test properties
 // TODO configure a profile
 // TODO use component scanning
 public class TestConfig {
+
+
     @Bean
     public Zoo zoo() {
         Zoo zoo = new PairiDaiza();
-        zoo.addAnimal(new Tiger("Bengal Tiger"));
+        zoo.addAnimal(new Tiger("Bengal Tiger 2"));
         zoo.addAnimal(new Elephant("Indian Elephant"));
         zoo.addAnimal(new Bear("Brown Bear"));
         return zoo;
     }
 
+    @Bean
+    public FoodRepository foodRepository2() {
+        FoodRepository foodRepository = new FoodRepositoryImpl();
+        foodRepository.addFoodForAnimalType(Tiger.class, new MeatyFood("Red Antilope Meat 2"));
+        foodRepository.addFoodForAnimalType(Bear.class, new MeatyFood("Pink Salmon"));
+        foodRepository.addFoodForAnimalType(Elephant.class, new VegiFood("Cabbage"));
+        return foodRepository;
+    }
+
    // TODO configure the properties loader
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer () {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
 
 }
