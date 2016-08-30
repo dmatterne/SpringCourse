@@ -1,5 +1,6 @@
 package com.realdolmen.spring;
 
+import com.realdolmen.spring.aspects.Facilities;
 import com.realdolmen.spring.domain.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -22,5 +23,10 @@ public class ApplicationConfiguration {
         zoo.addAnimal(new Panda("Xing Hui"));
         zoo.addAnimal(new Chimp("Ceasar"));
         return zoo;
+    }
+
+    @Bean
+    public Facilities aspect() {
+        return new Facilities();
     }
 }
