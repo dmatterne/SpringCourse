@@ -4,9 +4,11 @@ import com.realdolmen.spring.domain.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @ComponentScan
+@EnableAspectJAutoProxy
 // TODO: Enable the Spring AOP Engine
 public class ApplicationConfiguration {
     @Bean
