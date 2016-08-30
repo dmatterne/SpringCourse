@@ -2,13 +2,20 @@ package com.realdolmen.spring.aspects;
 
 import com.realdolmen.spring.domain.Animal;
 import com.realdolmen.spring.domain.Zoo;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 
 import java.util.Objects;
 
 // TODO: Marketing must become a Spring AOP Aspect
+//@Aspect
 public class Marketing {
     private boolean campaignLaunched = false;
 
+    //@Pointcut("execution(* *.addAnimal(Animal))")
+    public void launchCampaignBeforeAnimals() {
+
+    }
     // TODO: Add an advice that advices the zoo before new animals are added.
     // TODO: Make sure our advice launches the marketing campaign "launchCampaign(Zoo, Animal)". Figure out how to pass the relevant Zoo and Animal parameters.
 
