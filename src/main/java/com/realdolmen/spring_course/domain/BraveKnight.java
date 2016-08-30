@@ -18,6 +18,6 @@ public class BraveKnight implements Knight {
     @Override
     public void embarkOnQuest() {
         System.out.println("I'm a knight and I am brave");
-        quest.embark();
+       String spoils =  quest.embark();
     }
 }

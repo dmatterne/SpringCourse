@@ -36,10 +36,10 @@ public class Minstrel {
         System.out.println("La la la the quest has ended");
     }
 
-    @AfterReturning("embarks()")
+    @AfterReturning(value = "embarks()", returning = "spoils")
     @Order(1)
-    public void singAfterQuestComplete() {
-        System.out.println("And he lived happily ever after!");
+    public void singAfterQuestComplete(String spoils) {
+        System.out.println("And he lived happily ever after with his " + spoils);
     }
 
     @AfterThrowing("embarks()")
@@ -47,6 +47,5 @@ public class Minstrel {
     public void singAfterQuestFails() {
         System.out.println("Ding Dong The Knight is dead, which old knight, the wicked Knight");
     }
-
 
 }

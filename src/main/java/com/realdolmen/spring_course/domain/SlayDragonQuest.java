@@ -9,11 +9,14 @@ import java.util.Random;
 @Primary
 public class SlayDragonQuest implements Quest {
     @Override
-    public void embark() {
+    public String embark() {
         if(new Random().nextBoolean()) {
+
             throw new RuntimeException("Knight gets eaten ");
+
         } else {
             System.out.println("Going to slay dragon");
+            return "Dragon's Golden egg";
         }
 
 
