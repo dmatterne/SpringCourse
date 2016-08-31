@@ -8,15 +8,14 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 
+@Profile("test")
 public class TestConfig {
     // TODO: Use this class to add an embedded datasource for the test profile (you will have to set this up yourself)
 
-    @Profile("test")
     @Bean
-    private DataSource embeddedDataSource () {
+    public DataSource embeddedDataSource () {
         return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
-                .addScript("")
-                .addScript("")
+                .addScript("classpath:schema.sql")
                 .build();
 
     }
