@@ -13,14 +13,15 @@ public class ZooConfig {
     // TODO: add a datasource for the production profile. We will use BasicDataSource from Apache DBCP.
     // Use connection properties for MySQL (url = "jdbc:mysql://localhost:3306/zoo", user = "root", password = "")
 
-    @Profile("production")
+
     @Bean
-    public BasicDataSource bsd() {
+    @Profile("production")
+    public DataSource bsd() {
         BasicDataSource bs = new BasicDataSource();
         bs.setDriverClassName("org.h2.Driver");
         bs.setUrl("jdbc:mysql://localhost:3306/zoo");
         bs.setUsername("root");
-        bs.setPassword("");
+        bs.setPassword("root");
         bs.setInitialSize(5);
         bs.setMaxActive(10);
         return bs;
