@@ -38,7 +38,7 @@ public class JdbcFoodRepositoryTest {
     @Test
     public void findAllFoodReturnsAllFoods() throws Exception {
         List<Food> foods = foodRepository.findAllFood();
-        assertEquals("Food repository does not return the right number of foods", 6, foods.size());
+        assertEquals("Food dao does not return the right number of foods", 6, foods.size());
     }
 
     @Test

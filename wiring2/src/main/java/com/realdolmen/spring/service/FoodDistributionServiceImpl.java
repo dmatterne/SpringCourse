@@ -15,7 +15,7 @@ import java.util.List;
 public class FoodDistributionServiceImpl implements FoodDistributionService {
 
     @Autowired
-    // TODO Load the Kibble Repository
+    // TODO Load the Kibble dao
     @Kibble
     private FoodRepository foodRepository;
 

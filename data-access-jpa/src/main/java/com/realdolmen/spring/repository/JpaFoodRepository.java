@@ -37,7 +37,7 @@ public class JpaFoodRepository implements FoodRepository {
          em.remove(food);
     }
 
-    // TODO: Create a transactional repository bean implementing FoodRepository
+    // TODO: Create a transactional dao bean implementing FoodRepository
 
     // TODO: implement findFoodById()
 

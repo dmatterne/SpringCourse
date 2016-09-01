@@ -1,6 +1,6 @@
 package com.realdolmen.spring.repository;
 
-// TODO: Configure this class as a Spring Bean and inject the Repository. Do not use @ComponentScan to search for it, nor @Bean
+// TODO: Configure this class as a Spring Bean and inject the dao. Do not use @ComponentScan to search for it, nor @Bean
 //public class ZooController {
 //    private AnimalRepository animalRepository;
 //

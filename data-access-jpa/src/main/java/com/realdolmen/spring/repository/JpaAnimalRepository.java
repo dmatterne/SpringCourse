@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 @Transactional
 public class JpaAnimalRepository implements AnimalRepository {
-    // TODO: create a transactional repository bean from this class
+    // TODO: create a transactional dao bean from this class
 
     @PersistenceContext
     private EntityManager em;

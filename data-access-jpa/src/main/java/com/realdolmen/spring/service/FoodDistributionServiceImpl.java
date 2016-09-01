@@ -20,8 +20,8 @@ public class FoodDistributionServiceImpl implements FoodDistributionService {
 
     @Override
     public void feedAllAnimal() {
-        Objects.requireNonNull(animalRepository, "Animal repository must exist");
-        Objects.requireNonNull(foodRepository, "Food repository must exist");
+        Objects.requireNonNull(animalRepository, "Animal dao must exist");
+        Objects.requireNonNull(foodRepository, "Food dao must exist");
 
         animalRepository.findAll().stream().forEach(animal -> {
             List<Food> allFoodsForAnimal = foodRepository.findFoodForAnimalType(animal.getType());

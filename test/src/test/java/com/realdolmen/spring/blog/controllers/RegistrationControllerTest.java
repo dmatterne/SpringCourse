@@ -19,6 +19,6 @@ public class RegistrationControllerTest extends AbstractControllerTest {
     @Test
     public void formValidationSuccess() throws Exception {
         Assert.fail("todo");
-        // TODO: Write a unit test that verifies if a form with valid input calls the repository's save() method
+        // TODO: Write a unit test that verifies if a form with valid input calls the dao's save() method
     }
 }

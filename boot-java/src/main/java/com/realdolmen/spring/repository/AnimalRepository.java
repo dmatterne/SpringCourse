@@ -1,6 +1,6 @@
 package com.realdolmen.spring.repository;
 
-// TODO: Configure this class to be a Spring repository. Inject the JdbcTemplate. Where does it come from?
+// TODO: Configure this class to be a Spring dao. Inject the JdbcTemplate. Where does it come from?
 //public class AnimalRepository {
 //    private JdbcTemplate jdbcTemplate;
 //

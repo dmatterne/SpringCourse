@@ -28,6 +28,6 @@ public class AuthorControllerTest extends AbstractControllerTest {
 
     @Test
     public void removePropagatesToRepositoryDelete() throws Exception {
-        // TODO: Implement a unit test to verify that /authors/1/remove removes the author from the repository
+        // TODO: Implement a unit test to verify that /authors/1/remove removes the author from the dao
     }
 }
