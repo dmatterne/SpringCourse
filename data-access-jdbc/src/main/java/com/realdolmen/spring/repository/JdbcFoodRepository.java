@@ -32,34 +32,31 @@ public class JdbcFoodRepository implements FoodRepository {
     // TODO: Implement removeFood()
 
 
-    private RowMapper<Food> rm = new RowMapper<Food>() {
-        @Override
-        public Food mapRow(ResultSet rs, int i) throws SQLException {
+    private RowMapper<Food> rm = (rs, i) -> {
 
-            int id = rs.getInt("id");
-            String name = rs.getNString("name");
-            int cal = rs.getInt("calories");
-            String fclass = rs.getNString("food_class");
-            String mtype = rs.getNString("meaty_food_type");
-            boolean fruit = rs.getBoolean("fruit");
-            boolean veg = rs.getBoolean("vegetables");
+        int id = rs.getInt("id");
+        String name = rs.getNString("name");
+        int cal = rs.getInt("calories");
+        String fclass = rs.getNString("food_class");
+        String mtype = rs.getNString("meaty_food_type");
+        boolean fruit = rs.getBoolean("fruit");
+        boolean veg = rs.getBoolean("vegetables");
 
-            if (fclass.equals(MeatyFood.class.getSimpleName())) {
-                if (mtype != null) {
-                    return new MeatyFood(id, name, cal, MeatyFood.Type.valueOf(mtype));
-                } else {
-                    return new MeatyFood(id, name, cal, null);
-                }
-            } else if (fclass.equals(VegiFood.class.getSimpleName())) {
-
-                return new VegiFood (id,name,cal,fruit,veg);
+        if (fclass.equals(MeatyFood.class.getSimpleName())) {
+            if (mtype != null) {
+                return new MeatyFood(id, name, cal, MeatyFood.Type.valueOf(mtype));
             } else {
-                return null;
+                return new MeatyFood(id, name, cal, null);
             }
+        } else if (fclass.equals(VegiFood.class.getSimpleName())) {
 
-
-
+            return new VegiFood (id,name,cal,fruit,veg);
+        } else {
+            return null;
         }
+
+
+
     };
 
 
