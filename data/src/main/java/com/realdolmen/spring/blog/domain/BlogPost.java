@@ -78,4 +78,16 @@ public class BlogPost {
     public void setBlog(Blog blog) {
         this.blog = blog;
     }
+
+    @Override
+    public String toString() {
+        return "BlogPost{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", creationDate=" + creationDate +
+                ", updatedDate=" + updatedDate +
+                ", blog=" + blog +
+                '}';
+    }
 }

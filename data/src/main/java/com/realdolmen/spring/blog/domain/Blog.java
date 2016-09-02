@@ -63,4 +63,14 @@ public class Blog {
     public void setAuthor(Author author) {
         this.author = author;
     }
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", creationDate=" + creationDate +
+                ", author=" + author +
+                '}';
+    }
 }

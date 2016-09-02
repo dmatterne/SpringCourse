@@ -68,4 +68,15 @@ public class Comment {
     public void setBlogPost(BlogPost blogPost) {
         this.blogPost = blogPost;
     }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", content='" + content + '\'' +
+                ", creationDate=" + creationDate +
+                ", authorName='" + authorName + '\'' +
+                ", blogPost=" + blogPost +
+                '}';
+    }
 }
